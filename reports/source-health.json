@@ -1,0 +1,922 @@
+{
+  "runs": [
+    {
+      "at": "2026-10-16T12:41:55.616980+00:00",
+      "sources": [
+        {
+          "source": "https://feeds.content.dowjones.io/robots.txt",
+          "status": "HTTP_403",
+          "kind": "robots"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSUSnews",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSOpinion",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://feeds.content.dowjones.io/public/rss/RSSLifestyle",
+          "kind": "feed",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/robots.txt",
+          "status": "ok",
+          "kind": "robots"
+        },
+        {
+          "source": "https://www.wsj.com/",
+          "kind": "html",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/world",
+          "kind": "html",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/business",
+          "kind": "html",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/finance",
+          "kind": "html",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/opinion",
+          "kind": "html",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/sitemap.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/wsjsitemaps/wsj_google_news.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/wsj_video_recent.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/sitemap_topics.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/sitemaps/web/wsj/en/sitemap_wsj_en_index.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/live_news_sitemap.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/authors_sitemap.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/sitemaps/web/video/en/sitemap_video_en_index.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/buyside/sitemap.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/wsj_quote_index_sitemap.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/wsjsitemaps/wsj_recipes.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "source": "https://www.wsj.com/sitemap_topic_collections.xml",
+          "kind": "sitemap",
+          "status": "ValueError: robots denied or unavailable"
+        },
+        {
+          "kind": "coverage",
+          "status": "bounded",
+          "site": "WSJ",
+          "known_child_maps": 0,
+          "selected_child_maps": 0,
+          "not_scanned_this_run": 0
+        },
+        {
+          "source": "https://www.economist.com/robots.txt",
+          "status": "ok",
+          "kind": "robots"
+        },
+        {
+          "source": "https://www.economist.com/latest/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/printedition/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 42,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/the-world-this-week/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/leaders/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/briefing/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/united-states/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/the-americas/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/asia/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/china/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/middle-east-and-africa/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/europe/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/britain/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/international/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/business/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/finance-and-economics/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/science-and-technology/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/culture/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/obituary/rss.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 300,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.economist.com/weeklyedition",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.economist.com/",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.economist.com/business",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.economist.com/finance-and-economics",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.economist.com/sitemap.xml",
+          "kind": "sitemap",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.economist.com/googlenews.xml",
+          "kind": "sitemap",
+          "status": "HTTP_403"
+        },
+        {
+          "kind": "coverage",
+          "status": "bounded",
+          "site": "The Economist",
+          "known_child_maps": 0,
+          "selected_child_maps": 0,
+          "not_scanned_this_run": 0
+        },
+        {
+          "source": "https://www.ft.com/robots.txt",
+          "status": "ok",
+          "kind": "robots"
+        },
+        {
+          "source": "https://www.ft.com/home?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 10,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/world?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/companies?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/markets?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/opinion?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/technology?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/global-economy?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/work-careers?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/life-arts?format=rss",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.ft.com/world",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.ft.com/companies",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.ft.com/markets",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.ft.com/opinion",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.ft.com/sitemap.xml",
+          "kind": "sitemap",
+          "status": "HTTP_404"
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/index.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 291
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/archive-2026-10.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1653,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/news.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 252,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/archive-2026-9.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 3131,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/archive-2026-8.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 2358,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/archive-2026-7.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 3153,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.ft.com/sitemaps/archive-2026-6.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 3249,
+          "child_maps": 0
+        },
+        {
+          "kind": "coverage",
+          "status": "bounded",
+          "site": "FT",
+          "known_child_maps": 291,
+          "selected_child_maps": 6,
+          "not_scanned_this_run": 285
+        },
+        {
+          "source": "https://rss.nytimes.com/robots.txt",
+          "status": "HTTP_404",
+          "kind": "robots"
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 21,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 56,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 46,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 24,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 49,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 22,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 63,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Books.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 43,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Movies.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 32,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Theater.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Style.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 34,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/RealEstate.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 46,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 46,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Education.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 21,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Obituaries.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 20,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/DiningandWine.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 27,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/Well.xml",
+          "kind": "feed",
+          "status": "ok",
+          "raw_items": 25,
+          "child_maps": 0
+        },
+        {
+          "source": "https://rss.nytimes.com/services/xml/rss/nyt/SundayReview.xml",
+          "kind": "feed",
+          "status": "HTTP_404"
+        },
+        {
+          "source": "https://www.nytimes.com/robots.txt",
+          "status": "ok",
+          "kind": "robots"
+        },
+        {
+          "source": "https://www.nytimes.com/section/todayspaper",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.nytimes.com/",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.nytimes.com/section/world",
+          "kind": "html",
+          "status": "HTTP_403"
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/news.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 763,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 2101
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/collections.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 215
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/video.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 257
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/cooking.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 536
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/recipe-collects.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 74
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/regions.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 256,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/best-sellers.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 13541,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/subscription-landing-pages.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 14,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/weather.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 11
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/espanol.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 109
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/espanol-collects.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 21
+        },
+        {
+          "source": "https://www.nytimes.com/wirecutter/sitemapindex.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 12
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-videos-index.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 20
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-authors.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 872,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-verticals.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 76,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-teams.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1297,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-cities.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 53,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-players.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 3790,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-tags.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1960,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-stats.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1228,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-schedule.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1273,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-roster.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1228,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 0,
+          "child_maps": 104
+        },
+        {
+          "source": "https://www.nytimes.com/games-assets/v2/assets/sitemap/games.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 17,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap-2026-10.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 4763,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap-2025-11.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 8957,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap-2025-03.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 8601,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap-2024-01.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 7935,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/sitemaps/new/sitemap-2022-07.xml.gz",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 7984,
+          "child_maps": 0
+        },
+        {
+          "source": "https://www.nytimes.com/athletic/sitemap-misc.xml",
+          "kind": "sitemap",
+          "status": "ok",
+          "raw_items": 1,
+          "child_maps": 0
+        },
+        {
+          "kind": "coverage",
+          "status": "bounded",
+          "site": "NYT",
+          "known_child_maps": 3439,
+          "selected_child_maps": 6,
+          "not_scanned_this_run": 3433
+        }
+      ],
+      "sites": {
+        "WSJ": {
+          "accepted_observations": 0,
+          "new_unique": 0,
+          "ok_sources": 0
+        },
+        "The Economist": {
+          "accepted_observations": 228,
+          "new_unique": 104,
+          "ok_sources": 18
+        },
+        "FT": {
+          "accepted_observations": 1167,
+          "new_unique": 715,
+          "ok_sources": 16
+        },
+        "NYT": {
+          "accepted_observations": 1728,
+          "new_unique": 828,
+          "ok_sources": 55
+        }
+      }
+    }
+  ],
+  "cursors": {
+    "WSJ": 4,
+    "The Economist": 4,
+    "FT": 4,
+    "NYT": 4
+  }
+}

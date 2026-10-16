@@ -1,0 +1,255 @@
+{
+  "tested_date": "2026-10-16",
+  "environment": "Local Windows, not GitHub Actions",
+  "verified_full_text": false,
+  "wsj_unique": 293,
+  "wsj_accepted_observations": 379,
+  "wsj_sources": [
+    {
+      "source": "https://feeds.content.dowjones.io/robots.txt",
+      "status": "unavailable_4xx",
+      "http_status": 403,
+      "kind": "robots",
+      "policy": "no_rules_available"
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 73,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSUSnews",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 40,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 85,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 61,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 40,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSOpinion",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 100,
+      "child_maps": 0
+    },
+    {
+      "source": "https://feeds.content.dowjones.io/public/rss/RSSLifestyle",
+      "kind": "feed",
+      "status": "ok",
+      "raw_items": 55,
+      "child_maps": 0
+    },
+    {
+      "source": "https://www.wsj.com/robots.txt",
+      "status": "ok",
+      "kind": "robots"
+    },
+    {
+      "source": "https://www.wsj.com/",
+      "kind": "html",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/world",
+      "kind": "html",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/business",
+      "kind": "html",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/finance",
+      "kind": "html",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/opinion",
+      "kind": "html",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/sitemap.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/wsjsitemaps/wsj_google_news.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/wsj_video_recent.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/sitemap_topics.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/sitemaps/web/wsj/en/sitemap_wsj_en_index.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/live_news_sitemap.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/authors_sitemap.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/sitemaps/web/video/en/sitemap_video_en_index.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/buyside/sitemap.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/wsj_quote_index_sitemap.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/wsjsitemaps/wsj_recipes.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "source": "https://www.wsj.com/sitemap_topic_collections.xml",
+      "kind": "sitemap",
+      "status": "ValueError: robots denied or unavailable"
+    },
+    {
+      "kind": "coverage",
+      "status": "bounded",
+      "site": "WSJ",
+      "known_child_maps": 0,
+      "selected_child_maps": 0,
+      "not_scanned_this_run": 0
+    }
+  ],
+  "samples": [
+    {
+      "site": "The Economist",
+      "url": "https://www.economist.com/culture/2026/10/15/what-to-watch-this-week",
+      "fetch_status": "failed",
+      "access_classification": "blocked_challenge",
+      "transport": "bpc-fetch-cli"
+    },
+    {
+      "site": "NYT",
+      "url": "https://www.nytimes.com/2026/10/16/business/dealbook/fed-rates-warsh-inflation.html",
+      "fetch_status": "failed",
+      "access_classification": "blocked_challenge",
+      "transport": "bpc-fetch-cli"
+    },
+    {
+      "site": "FT",
+      "url": "https://www.ft.com/content/d25f2791-a3f0-4a44-a0f0-0a2551648b81",
+      "fetch_status": "partial_or_paid_unverified",
+      "access_classification": "partial_or_paid_unverified",
+      "transport": "curl_cffi+bpc_extract",
+      "text_chars": 808,
+      "text_sha256": "bf28faef24843b9876ccfd06bd97cb2a118a2b5b4d0e9d5fafc3d301db24b0d3"
+    },
+    {
+      "site": "WSJ",
+      "url": "https://www.wsj.com/world/russian-defector-deadly-sabotage-campaign-a95d163c",
+      "fetch_status": "partial_or_paid_unverified",
+      "access_classification": "partial_or_paid_unverified",
+      "transport": "curl_cffi+bpc_extract",
+      "text_chars": 1347,
+      "text_sha256": "d86c9c0c2665cdb2f12f52c8f6c58c84fa76b4fcf6434f2b6da05883ebd3100a"
+    }
+  ],
+  "normal_browser_samples": [
+    {
+      "site": "The Economist",
+      "url": "https://www.economist.com/culture/2026/10/15/what-to-watch-this-week",
+      "browser_version": "155.0.4283.45",
+      "mode": "unmodified_fresh_browser",
+      "initial_status": 403,
+      "final_url": "https://www.economist.com/culture/2026/10/15/what-to-watch-this-week",
+      "title": "请稍候…",
+      "html_bytes": 28946,
+      "body_chars": 119,
+      "extracted_chars": 138,
+      "text_hash": "c3bc57952d7467c68bdfb46d62ad7129ce57c9a4516de9eaa81bf5bb95c7fe1b",
+      "marker": []
+    },
+    {
+      "site": "NYT",
+      "url": "https://www.nytimes.com/2026/10/16/business/dealbook/fed-rates-warsh-inflation.html",
+      "browser_version": "155.0.4283.45",
+      "mode": "unmodified_fresh_browser",
+      "initial_status": 403,
+      "final_url": "https://www.nytimes.com/2026/10/16/business/dealbook/fed-rates-warsh-inflation.html",
+      "title": "nytimes.com",
+      "html_bytes": 1537,
+      "body_chars": 0,
+      "extracted_chars": 0,
+      "text_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "marker": []
+    },
+    {
+      "site": "FT",
+      "url": "https://www.ft.com/content/d25f2791-a3f0-4a44-a0f0-0a2551648b81",
+      "browser_version": "155.0.4283.45",
+      "mode": "unmodified_fresh_browser",
+      "initial_status": 403,
+      "final_url": "https://www.ft.com/content/d25f2791-a3f0-4a44-a0f0-0a2551648b81",
+      "title": "请稍候…",
+      "html_bytes": 271894,
+      "body_chars": 554,
+      "extracted_chars": 276,
+      "text_hash": "6246a44d74a9810349a2379e0584196e12ac2072c691c3bd6f900724e8103dc0",
+      "marker": []
+    },
+    {
+      "site": "WSJ",
+      "url": "https://www.wsj.com/world/russian-defector-deadly-sabotage-campaign-a95d163c",
+      "browser_version": "155.0.4283.45",
+      "mode": "unmodified_fresh_browser",
+      "initial_status": 401,
+      "final_url": "https://www.wsj.com/world/russian-defector-deadly-sabotage-campaign-a95d163c",
+      "title": "wsj.com",
+      "html_bytes": 1531,
+      "body_chars": 0,
+      "extracted_chars": 0,
+      "text_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "marker": []
+    }
+  ]
+}

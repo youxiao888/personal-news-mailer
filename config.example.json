@@ -1,0 +1,160 @@
+{
+  "timezone": "America/Los_Angeles",
+  "send_after_local_hour": 7,
+  "lookback_days": 7,
+  "http_timeout_seconds": 10,
+  "request_delay_seconds": 0.6,
+  "sitemap_child_budget_per_site": 6,
+  "discover_sitemaps_from_robots": true,
+  "bpc": {
+    "enabled": true,
+    "max_articles_per_digest": 12,
+    "max_attempts_per_article": 2,
+    "per_article_timeout_seconds": 45,
+    "total_budget_seconds": 240,
+    "min_text_chars": 800,
+    "max_text_chars_per_article": 45000
+  },
+  "sites": [
+    {
+      "id": "The Economist",
+      "domain": "economist.com",
+      "fetch_hosts": [
+        "economist.com",
+        "www.economist.com"
+      ],
+      "feeds": [
+        "https://www.economist.com/latest/rss.xml",
+        "https://www.economist.com/printedition/rss.xml",
+        "https://www.economist.com/the-world-this-week/rss.xml",
+        "https://www.economist.com/leaders/rss.xml",
+        "https://www.economist.com/briefing/rss.xml",
+        "https://www.economist.com/united-states/rss.xml",
+        "https://www.economist.com/the-americas/rss.xml",
+        "https://www.economist.com/asia/rss.xml",
+        "https://www.economist.com/china/rss.xml",
+        "https://www.economist.com/middle-east-and-africa/rss.xml",
+        "https://www.economist.com/europe/rss.xml",
+        "https://www.economist.com/britain/rss.xml",
+        "https://www.economist.com/international/rss.xml",
+        "https://www.economist.com/business/rss.xml",
+        "https://www.economist.com/finance-and-economics/rss.xml",
+        "https://www.economist.com/science-and-technology/rss.xml",
+        "https://www.economist.com/culture/rss.xml",
+        "https://www.economist.com/obituary/rss.xml"
+      ],
+      "pages": [
+        "https://www.economist.com/weeklyedition",
+        "https://www.economist.com/",
+        "https://www.economist.com/business",
+        "https://www.economist.com/finance-and-economics"
+      ],
+      "sitemaps": [
+        "https://www.economist.com/sitemap.xml"
+      ]
+    },
+    {
+      "id": "NYT",
+      "domain": "nytimes.com",
+      "fetch_hosts": [
+        "nytimes.com",
+        "www.nytimes.com",
+        "rss.nytimes.com"
+      ],
+      "feeds": [
+        "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Books.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Movies.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Theater.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Style.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/RealEstate.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Education.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Obituaries.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/DiningandWine.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/Well.xml",
+        "https://rss.nytimes.com/services/xml/rss/nyt/SundayReview.xml"
+      ],
+      "pages": [
+        "https://www.nytimes.com/section/todayspaper",
+        "https://www.nytimes.com/",
+        "https://www.nytimes.com/section/world"
+      ],
+      "sitemaps": [
+        "https://www.nytimes.com/sitemaps/new/news.xml.gz",
+        "https://www.nytimes.com/sitemaps/new/sitemap.xml.gz"
+      ]
+    },
+    {
+      "id": "FT",
+      "domain": "ft.com",
+      "fetch_hosts": [
+        "ft.com",
+        "www.ft.com"
+      ],
+      "feeds": [
+        "https://www.ft.com/home?format=rss",
+        "https://www.ft.com/world?format=rss",
+        "https://www.ft.com/companies?format=rss",
+        "https://www.ft.com/markets?format=rss",
+        "https://www.ft.com/opinion?format=rss",
+        "https://www.ft.com/technology?format=rss",
+        "https://www.ft.com/global-economy?format=rss",
+        "https://www.ft.com/work-careers?format=rss",
+        "https://www.ft.com/life-arts?format=rss"
+      ],
+      "pages": [
+        "https://www.ft.com/",
+        "https://www.ft.com/world",
+        "https://www.ft.com/companies",
+        "https://www.ft.com/markets",
+        "https://www.ft.com/opinion"
+      ],
+      "sitemaps": [
+        "https://www.ft.com/sitemap.xml"
+      ]
+    },
+    {
+      "id": "WSJ",
+      "domain": "wsj.com",
+      "fetch_hosts": [
+        "wsj.com",
+        "www.wsj.com",
+        "feeds.content.dowjones.io",
+        "feeds.a.dj.com"
+      ],
+      "feeds": [
+        "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+        "https://feeds.content.dowjones.io/public/rss/RSSUSnews",
+        "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+        "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+        "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+        "https://feeds.content.dowjones.io/public/rss/RSSOpinion",
+        "https://feeds.content.dowjones.io/public/rss/RSSLifestyle"
+      ],
+      "pages": [
+        "https://www.wsj.com/",
+        "https://www.wsj.com/world",
+        "https://www.wsj.com/business",
+        "https://www.wsj.com/finance",
+        "https://www.wsj.com/opinion"
+      ],
+      "sitemaps": [
+        "https://www.wsj.com/sitemap.xml"
+      ]
+    }
+  ]
+}

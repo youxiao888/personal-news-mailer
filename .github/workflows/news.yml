@@ -1,0 +1,201 @@
+name: Four publications mailer
+
+on:
+  schedule:
+    - cron: '17 * * * *' # UTC; digest day/hour is computed in config.json timezone.
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'run = normal; preview = no mail; smtp-test = one test; resolve = pending ledger'
+        type: choice
+        options: [run, preview, smtp-test, resolve]
+        default: preview
+      resolve_date:
+        description: 'resolve only: pending target date YYYY-MM-DD from news-state/ledger.json'
+        type: string
+      resolve_action:
+        description: 'Check provider log first. allow-retry may cause a duplicate.'
+        type: choice
+        options: [mark-sent, allow-retry]
+        default: mark-sent
+
+permissions:
+  contents: read
+
+concurrency:
+  group: personal-news-mailer
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: (github.event_name == 'schedule' && vars.NEWS_ENABLED == 'true') || inputs.mode == 'run' || inputs.mode == 'preview'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    outputs:
+      due: ${{ steps.plan.outputs.due }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Load durable metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m newsflow.state_io pull
+      - name: Discover and merge all configured sources
+        run: python -m newsflow.collect
+      - name: Prepare yesterday and late discoveries
+        id: plan
+        env:
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ "$MODE" = preview ]; then
+            python -m newsflow.digest --force
+          else
+            python -m newsflow.digest
+          fi
+      - name: Read BPC preference
+        id: preference
+        run: |
+          python - <<'PY'
+          import json, os
+          cfg = json.load(open('config.json'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('enabled=' + str(cfg['bpc']['enabled']).lower() + '\n')
+          PY
+      - name: Install verified BPC revision only when a digest is due
+        id: bpc_install
+        if: steps.plan.outputs.due == 'true' && steps.preference.outputs.enabled == 'true'
+        continue-on-error: true
+        run: |
+          git init .runtime/bpc-src
+          git -C .runtime/bpc-src remote add origin https://github.com/Sophomoresty/bpc-fetch.git
+          git -C .runtime/bpc-src fetch --depth=1 origin 76e24f51f4bc7b1ed9bd91418796f3cf104be56b
+          git -C .runtime/bpc-src checkout --detach FETCH_HEAD
+          python -m pip install -r requirements-bpc.txt
+          python -m pip install --no-deps -e .runtime/bpc-src
+          python -m playwright install --with-deps chromium
+          python -m newsflow.browser_check
+          bpc-fetch fetch --help
+          bpc-fetch doctor --sites-js .runtime/bpc-src/data/sites.js --compact
+      - name: Attempt bounded BPC extraction
+        id: bpc_run
+        if: steps.bpc_install.outcome == 'success'
+        continue-on-error: true
+        run: python -m newsflow.bpc --sites-js .runtime/bpc-src/data/sites.js
+      - name: Record disabled or failed extraction explicitly
+        if: steps.plan.outputs.due == 'true' && steps.bpc_run.outcome != 'success'
+        run: |
+          python - <<'PY'
+          from newsflow.common import load
+          from newsflow.digest import write_bundle
+          b = load('.runtime/bundle/bundle.json')
+          b['bpc_note'] = '本次未完成 bpc-fetch 处理：可能已关闭、安装失败或执行失败。目录照常保留；没有正文成功率承诺。'
+          write_bundle('.runtime/bundle', b)
+          PY
+      - name: Save catalogue before email delivery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m newsflow.state_io push
+      - name: Build preview without credentials
+        if: steps.plan.outputs.due == 'true' && inputs.mode == 'preview'
+        run: python -m newsflow.mail preview
+      - name: Encrypt temporary digest before upload
+        if: steps.plan.outputs.due == 'true'
+        env:
+          DIGEST_KEY: ${{ secrets.DIGEST_KEY }}
+        run: python -m newsflow.seal pack
+      - name: Transfer encrypted digest (short retention)
+        if: steps.plan.outputs.due == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: digest-${{ github.run_id }}
+          path: .runtime/sealed/
+          retention-days: 1
+          if-no-files-found: error
+
+  mail:
+    needs: collect
+    if: needs.collect.outputs.due == 'true' && (github.event_name == 'schedule' || inputs.mode == 'run')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: digest-${{ github.run_id }}
+          path: .runtime/sealed
+      - name: Authenticate and decrypt data only
+        env:
+          DIGEST_KEY: ${{ secrets.DIGEST_KEY }}
+        run: python -m newsflow.seal unpack
+      - name: Load latest ledger
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m newsflow.state_io pull
+      - name: Send one daily digest with TLS and durable intent
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SMTP_HOST: ${{ vars.SMTP_HOST || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ vars.SMTP_PORT || '587' }}
+          SMTP_SECURITY: ${{ vars.SMTP_SECURITY || 'starttls' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python -m newsflow.mail send
+
+  smtp-test:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'smtp-test'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Send a test message
+        env:
+          SMTP_HOST: ${{ vars.SMTP_HOST || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ vars.SMTP_PORT || '587' }}
+          SMTP_SECURITY: ${{ vars.SMTP_SECURITY || 'starttls' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python -m newsflow.mail test
+
+  resolve:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'resolve'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m newsflow.state_io pull
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          RESOLVE_DATE: ${{ inputs.resolve_date }}
+          RESOLVE_ACTION: ${{ inputs.resolve_action }}
+        run: python -m newsflow.mail resolve
