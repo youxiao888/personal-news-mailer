@@ -1,5 +1,6 @@
 """Probe current sources and four fresh articles; publish metadata only."""
 import argparse
+import asyncio
 import os
 import platform
 import subprocess
@@ -39,6 +40,12 @@ def main():
               'collection': load(state / 'health.json')['runs'][-1],
               'note': 'A completed diagnostic is not proof of access or complete text. No article bodies are exported.'}
     save('access-report/results.json', report)
+    from .browser_probe import probe
+    try:
+        report['direct_browser_samples'] = asyncio.run(probe(samples))
+    except Exception as exc:
+        report['direct_browser_error'] = type(exc).__name__
+    save('access-report/results.json', report)
     lines = ['## Access results', '', 'Diagnostic completed; no verified full text claim.', '',
              '| Publisher | Result | Classification | Text characters |', '| --- | --- | --- | ---: |']
     for a in samples:
@@ -46,6 +53,9 @@ def main():
     for site in cfg['sites']:
         if not any(a['site'] == site['id'] for a in samples):
             lines.append(f"| {site['id']} | no catalogue sample | not attempted | 0 |")
+    lines.extend(['', '### Direct fresh Chromium requests', '', '| Publisher | HTTP | Classification | Characters |', '| --- | ---: | --- | ---: |'])
+    for a in report.get('direct_browser_samples', []):
+        lines.append(f"| {a['site']} | {a.get('http_status', '')} | {a.get('classification', a.get('error', 'unknown'))} | {a.get('text_chars', 0)} |")
     text = '\n'.join(lines) + '\n'
     Path('access-report/summary.md').write_text(text, encoding='utf-8')
     if os.getenv('GITHUB_STEP_SUMMARY'):
@@ -56,3 +66,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
